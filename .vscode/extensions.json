@@ -1,0 +1,13 @@
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.black-formatter",
+    "charliermarsh.ruff",
+    "ms-python.mypy-type-checker",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "github.vscode-pull-request-github",
+    "redhat.vscode-yaml",
+    "hashicorp.terraform"
+  ]
+}

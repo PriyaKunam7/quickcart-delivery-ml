@@ -1,0 +1,25 @@
+[project]
+name = "quickcart-ml"
+version = "0.1.0"
+description = "Delivery time prediction platform for QuickCart"
+requires-python = ">=3.14"
+
+[tool.black]
+line-length = 88
+target-version = ["py314"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.mypy]
+python_version = "3.14"
+ignore_missing_imports = true
+disallow_untyped_defs = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v"
