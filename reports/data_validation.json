@@ -1,0 +1,23 @@
+{
+  "generated_at": "2026-09-02T03:19:01.690843+00:00",
+  "row_count": 100000,
+  "invalid_record_count": 0,
+  "null_percentage_by_field": {
+    "order_id": 0.0,
+    "order_timestamp": 0.0,
+    "origin_zip": 0.0,
+    "destination_zip": 0.0,
+    "carrier_code": 0.0,
+    "item_category": 0.0,
+    "distance_miles": 0.0,
+    "warehouse_processing_hours": 0.0,
+    "weather_score": 0.0,
+    "holiday_flag": 0.0,
+    "weekend_flag": 0.0,
+    "historical_carrier_delay_days": 0.0,
+    "actual_delivery_days": 0.0
+  },
+  "issues": [],
+  "critical_schema_violations": 0,
+  "passed": true
+}
