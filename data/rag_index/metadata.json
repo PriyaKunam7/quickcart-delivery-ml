@@ -1,0 +1,147 @@
+{
+  "doc_checksums": {
+    "5093e2a98c90b65f": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
+    "b6a12468e2c340f2": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
+    "44aed326d98915ef": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc"
+  },
+  "doc_chunk_ids": {
+    "5093e2a98c90b65f": [
+      "f5503fb2113ddea7",
+      "d4e46fdd426f038d",
+      "719fc6892bbf8cb9",
+      "4e321e136e75bb54"
+    ],
+    "b6a12468e2c340f2": [
+      "8b3558ace5d0c83f",
+      "5b23608356a09b67",
+      "66e9d279ef7a023c",
+      "d57774b4473a5a60",
+      "6a57d6ab2bfbca13"
+    ],
+    "44aed326d98915ef": [
+      "c65eff59df7b06cd",
+      "924e608ffb68d05e",
+      "b6b04e8c0a1b34d5",
+      "956e132049d91907"
+    ]
+  },
+  "chunk_records": {
+    "f5503fb2113ddea7": {
+      "chunk_id": "f5503fb2113ddea7",
+      "doc_id": "5093e2a98c90b65f",
+      "source_path": "incidents/postmortem_template.md",
+      "heading_path": "Postmortem Template > Summary",
+      "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
+      "ingested_at": "2026-09-03T03:16:04.028298+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "d4e46fdd426f038d": {
+      "chunk_id": "d4e46fdd426f038d",
+      "doc_id": "5093e2a98c90b65f",
+      "source_path": "incidents/postmortem_template.md",
+      "heading_path": "Postmortem Template > Timeline",
+      "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
+      "ingested_at": "2026-09-03T03:16:04.028298+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "719fc6892bbf8cb9": {
+      "chunk_id": "719fc6892bbf8cb9",
+      "doc_id": "5093e2a98c90b65f",
+      "source_path": "incidents/postmortem_template.md",
+      "heading_path": "Postmortem Template > Root Cause",
+      "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
+      "ingested_at": "2026-09-03T03:16:04.028298+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "4e321e136e75bb54": {
+      "chunk_id": "4e321e136e75bb54",
+      "doc_id": "5093e2a98c90b65f",
+      "source_path": "incidents/postmortem_template.md",
+      "heading_path": "Postmortem Template > Action Items",
+      "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
+      "ingested_at": "2026-09-03T03:16:04.028298+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "8b3558ace5d0c83f": {
+      "chunk_id": "8b3558ace5d0c83f",
+      "doc_id": "b6a12468e2c340f2",
+      "source_path": "runbooks/database_restart.md",
+      "heading_path": "Database Restart Runbook > Overview",
+      "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
+      "ingested_at": "2026-09-03T03:16:04.028581+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "5b23608356a09b67": {
+      "chunk_id": "5b23608356a09b67",
+      "doc_id": "b6a12468e2c340f2",
+      "source_path": "runbooks/database_restart.md",
+      "heading_path": "Database Restart Runbook > Preconditions",
+      "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
+      "ingested_at": "2026-09-03T03:16:04.028581+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "66e9d279ef7a023c": {
+      "chunk_id": "66e9d279ef7a023c",
+      "doc_id": "b6a12468e2c340f2",
+      "source_path": "runbooks/database_restart.md",
+      "heading_path": "Database Restart Runbook > Preconditions > Checking replication lag",
+      "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
+      "ingested_at": "2026-09-03T03:16:04.028581+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "d57774b4473a5a60": {
+      "chunk_id": "d57774b4473a5a60",
+      "doc_id": "b6a12468e2c340f2",
+      "source_path": "runbooks/database_restart.md",
+      "heading_path": "Database Restart Runbook > Restart Steps",
+      "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
+      "ingested_at": "2026-09-03T03:16:04.028581+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "6a57d6ab2bfbca13": {
+      "chunk_id": "6a57d6ab2bfbca13",
+      "doc_id": "b6a12468e2c340f2",
+      "source_path": "runbooks/database_restart.md",
+      "heading_path": "Database Restart Runbook > Rollback",
+      "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
+      "ingested_at": "2026-09-03T03:16:04.028581+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "c65eff59df7b06cd": {
+      "chunk_id": "c65eff59df7b06cd",
+      "doc_id": "44aed326d98915ef",
+      "source_path": "runbooks/incident_response.md",
+      "heading_path": "Incident Response Runbook > Severity Levels",
+      "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
+      "ingested_at": "2026-09-03T03:16:04.028788+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "924e608ffb68d05e": {
+      "chunk_id": "924e608ffb68d05e",
+      "doc_id": "44aed326d98915ef",
+      "source_path": "runbooks/incident_response.md",
+      "heading_path": "Incident Response Runbook > Severity Levels > SEV1",
+      "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
+      "ingested_at": "2026-09-03T03:16:04.028788+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "b6b04e8c0a1b34d5": {
+      "chunk_id": "b6b04e8c0a1b34d5",
+      "doc_id": "44aed326d98915ef",
+      "source_path": "runbooks/incident_response.md",
+      "heading_path": "Incident Response Runbook > Severity Levels > SEV2",
+      "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
+      "ingested_at": "2026-09-03T03:16:04.028788+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    },
+    "956e132049d91907": {
+      "chunk_id": "956e132049d91907",
+      "doc_id": "44aed326d98915ef",
+      "source_path": "runbooks/incident_response.md",
+      "heading_path": "Incident Response Runbook > Communication",
+      "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
+      "ingested_at": "2026-09-03T03:16:04.028788+00:00",
+      "embedding_model_version": "local-hash-embed-v1-dim128"
+    }
+  }
+}
