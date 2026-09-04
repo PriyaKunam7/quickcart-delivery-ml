@@ -8,3 +8,4 @@ uvicorn
 joblib
 boto3
 prometheus-client
+faiss-cpu
