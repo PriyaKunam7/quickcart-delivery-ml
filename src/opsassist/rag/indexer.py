@@ -20,6 +20,7 @@ Design notes:
 import hashlib
 import json
 import os
+import re
 from abc import ABC, abstractmethod
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
@@ -29,7 +30,7 @@ import numpy as np
 from opsassist.rag.chunker import Chunk
 from opsassist.rag.loader import Document
 
-EMBEDDING_DIMENSION = 128
+EMBEDDING_DIMENSION = 512
 
 
 # --------------------------------------------------------------------
@@ -49,28 +50,115 @@ class EmbeddingProvider(ABC):
 
 class LocalHashEmbeddingProvider(EmbeddingProvider):
     """
-    Deterministic, fully offline embedding provider.
+    Deterministic, fully offline embedding provider using a bag-of-words
+    hashing trick (feature hashing) with stopword filtering: each
+    significant token in the text is hashed into a fixed-size vector
+    position with a random sign, weighted by log-scaled term frequency,
+    and the resulting vector is L2-normalized.
 
-    Not semantically meaningful (it doesn't understand language) — its
-    purpose is to let the whole pipeline be built, tested, and
-    demoed without any external API calls or downloaded models. Swap
-    this out for a real embedding provider before using retrieval
-    results for anything user-facing.
+    This is NOT a real semantic embedding model — it has no notion of
+    word meaning, synonyms, or grammar. What it *does* capture is
+    lexical overlap: two texts that share more of the same significant
+    (non-stopword) words will have a higher cosine similarity than two
+    texts that don't. That's enough to make retrieval and the
+    "insufficient evidence" threshold meaningfully testable offline,
+    without any external API calls or downloaded models. Swap this out
+    for a real embedding provider (e.g. an OpenAI embeddings endpoint or
+    a local sentence-transformers model) before using retrieval results
+    for anything user-facing.
     """
+
+    _STOPWORDS = {
+        "a",
+        "an",
+        "the",
+        "is",
+        "are",
+        "was",
+        "were",
+        "be",
+        "been",
+        "being",
+        "do",
+        "does",
+        "did",
+        "i",
+        "you",
+        "he",
+        "she",
+        "it",
+        "we",
+        "they",
+        "what",
+        "which",
+        "who",
+        "whom",
+        "this",
+        "that",
+        "these",
+        "those",
+        "for",
+        "of",
+        "in",
+        "on",
+        "at",
+        "to",
+        "and",
+        "or",
+        "as",
+        "with",
+        "if",
+        "how",
+        "when",
+        "where",
+        "why",
+        "can",
+        "could",
+        "should",
+        "would",
+        "will",
+        "shall",
+        "may",
+        "might",
+        "must",
+        "not",
+        "no",
+        "so",
+        "than",
+        "then",
+        "there",
+        "here",
+        "up",
+        "down",
+        "out",
+        "about",
+    }
 
     def __init__(self, dimension: int = EMBEDDING_DIMENSION):
         self.dimension = dimension
-        self.model_version = f"local-hash-embed-v1-dim{dimension}"
+        self.model_version = f"local-hash-embed-v2-dim{dimension}"
+
+    @classmethod
+    def _tokenize(cls, text: str) -> list[str]:
+        tokens = re.findall(r"[a-z0-9]+", text.lower())
+        return [t for t in tokens if t not in cls._STOPWORDS and len(t) > 1]
 
     def embed(self, texts: list[str]) -> np.ndarray:
         vectors = np.zeros((len(texts), self.dimension), dtype="float32")
         for i, text in enumerate(texts):
-            # Hash the text into a reproducible seed, then generate a
-            # deterministic pseudo-random vector from that seed.
-            digest = hashlib.sha256(text.encode("utf-8")).digest()
-            seed = int.from_bytes(digest[:8], "big")
-            rng = np.random.default_rng(seed)
-            vec = rng.normal(size=self.dimension).astype("float32")
+            tokens = self._tokenize(text)
+            counts: dict[str, int] = {}
+            for token in tokens:
+                counts[token] = counts.get(token, 0) + 1
+
+            vec = np.zeros(self.dimension, dtype="float32")
+            for token, count in counts.items():
+                digest = hashlib.sha256(token.encode("utf-8")).digest()
+                idx = int.from_bytes(digest[:4], "big") % self.dimension
+                sign = 1.0 if digest[4] % 2 == 0 else -1.0
+                weight = 1.0 + np.log(count)  # log-scaled term frequency
+                vec[idx] += sign * weight
+
             norm = np.linalg.norm(vec)
             vectors[i] = vec / norm if norm > 0 else vec
         return vectors
@@ -196,6 +284,7 @@ class ChunkRecord:
     doc_id: str
     source_path: str
     heading_path: str
+    text: str
     doc_checksum: str
     ingested_at: str
     embedding_model_version: str
@@ -293,6 +382,7 @@ class RagIndexer:
                     doc_id=c.doc_id,
                     source_path=c.source_path,
                     heading_path=c.heading_path,
+                    text=c.text,
                     doc_checksum=doc.checksum,
                     ingested_at=ingested_at,
                     embedding_model_version=self.embedding_provider.model_version,
