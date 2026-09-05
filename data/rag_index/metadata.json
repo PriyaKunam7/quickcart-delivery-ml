@@ -33,7 +33,7 @@
       "heading_path": "Postmortem Template > Summary",
       "text": "Brief, one-paragraph description of what happened and the customer impact.",
       "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
-      "ingested_at": "2026-09-04T02:35:59.359258+00:00",
+      "ingested_at": "2026-09-05T02:41:28.670879+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "d4e46fdd426f038d": {
@@ -43,7 +43,7 @@
       "heading_path": "Postmortem Template > Timeline",
       "text": "Chronological list of key events, detection, and resolution actions.",
       "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
-      "ingested_at": "2026-09-04T02:35:59.359258+00:00",
+      "ingested_at": "2026-09-05T02:41:28.670879+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "719fc6892bbf8cb9": {
@@ -53,7 +53,7 @@
       "heading_path": "Postmortem Template > Root Cause",
       "text": "Description of the underlying cause, distinct from the triggering event.",
       "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
-      "ingested_at": "2026-09-04T02:35:59.359258+00:00",
+      "ingested_at": "2026-09-05T02:41:28.670879+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "4e321e136e75bb54": {
@@ -63,7 +63,7 @@
       "heading_path": "Postmortem Template > Action Items",
       "text": "Concrete follow-up work with owners and due dates.",
       "doc_checksum": "b048b56329933c1c75775afd291361e13043fce428b0fab0cb7d457c04be7369",
-      "ingested_at": "2026-09-04T02:35:59.359258+00:00",
+      "ingested_at": "2026-09-05T02:41:28.670879+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "8b3558ace5d0c83f": {
@@ -73,7 +73,7 @@
       "heading_path": "Database Restart Runbook > Overview",
       "text": "This runbook covers safe restart procedures for the primary PostgreSQL\ndatabase cluster used by the CMDB service.",
       "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
-      "ingested_at": "2026-09-04T02:35:59.359698+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671145+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "5b23608356a09b67": {
@@ -83,7 +83,7 @@
       "heading_path": "Database Restart Runbook > Preconditions",
       "text": "Confirm there is no active incident before restarting. Check the\nobservability dashboard for current replication lag.",
       "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
-      "ingested_at": "2026-09-04T02:35:59.359698+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671145+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "66e9d279ef7a023c": {
@@ -93,7 +93,7 @@
       "heading_path": "Database Restart Runbook > Preconditions > Checking replication lag",
       "text": "Run the replication status query against the primary node and confirm\nlag is under 5 seconds before proceeding.",
       "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
-      "ingested_at": "2026-09-04T02:35:59.359698+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671145+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "d57774b4473a5a60": {
@@ -103,7 +103,7 @@
       "heading_path": "Database Restart Runbook > Restart Steps",
       "text": "1. Notify the on-call channel.\n2. Drain traffic from the node.\n3. Perform the restart.\n4. Verify health checks pass.",
       "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
-      "ingested_at": "2026-09-04T02:35:59.359698+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671145+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "6a57d6ab2bfbca13": {
@@ -113,7 +113,7 @@
       "heading_path": "Database Restart Runbook > Rollback",
       "text": "If health checks fail after restart, fail back to the standby replica\nimmediately and escalate to the database team.",
       "doc_checksum": "832d019cec2b1e746085952884d332067ed96bb40c66e556fdb6416060e65bec",
-      "ingested_at": "2026-09-04T02:35:59.359698+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671145+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "c65eff59df7b06cd": {
@@ -123,7 +123,7 @@
       "heading_path": "Incident Response Runbook > Severity Levels",
       "text": "Incidents are classified as SEV1 through SEV4 based on customer\nimpact and scope.",
       "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
-      "ingested_at": "2026-09-04T02:35:59.359997+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671319+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "924e608ffb68d05e": {
@@ -133,7 +133,7 @@
       "heading_path": "Incident Response Runbook > Severity Levels > SEV1",
       "text": "Full outage affecting all customers. Page the on-call lead immediately.",
       "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
-      "ingested_at": "2026-09-04T02:35:59.359997+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671319+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "b6b04e8c0a1b34d5": {
@@ -143,7 +143,7 @@
       "heading_path": "Incident Response Runbook > Severity Levels > SEV2",
       "text": "Partial outage or major degradation affecting a subset of customers.",
       "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
-      "ingested_at": "2026-09-04T02:35:59.359997+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671319+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     },
     "956e132049d91907": {
@@ -153,7 +153,7 @@
       "heading_path": "Incident Response Runbook > Communication",
       "text": "All incidents must be logged in the incident tracker within 15 minutes\nof detection, with regular status updates posted every 30 minutes\nuntil resolution.",
       "doc_checksum": "6738840c5f608508a263b1b3627ad9beef49620683737d6201f17c82cdc1f5bc",
-      "ingested_at": "2026-09-04T02:35:59.359997+00:00",
+      "ingested_at": "2026-09-05T02:41:28.671319+00:00",
       "embedding_model_version": "local-hash-embed-v2-dim512"
     }
   }
