@@ -1,7 +1,7 @@
 {
   "documents_processed": 3,
-  "documents_skipped_unchanged": 3,
+  "documents_skipped_unchanged": 0,
   "documents_updated": 0,
-  "chunks_added": 0,
+  "chunks_added": 13,
   "total_chunks_in_index": 13
 }
