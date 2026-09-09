@@ -2,12 +2,8 @@ pandas
 numpy
 scikit-learn
 pydantic
-pyyaml
 fastapi
 uvicorn
 joblib
 boto3
 prometheus-client
-faiss-cpu
-fastapi
-uvicorn
