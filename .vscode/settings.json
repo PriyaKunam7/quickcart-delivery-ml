@@ -5,7 +5,7 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.codeActionsOnSave": {
-      "source.fixAll.ruff": true
+      "source.fixAll.ruff": "explicit"
     }
   },
   "ruff.enable": true,
