@@ -24,3 +24,26 @@ metrics:
 cloud:
   region: us-west-2
   provider: aws
+
+rule_engine:
+  enabled: true
+  distance_bands:
+    - max: 249
+      days: 1
+    - max: 749
+      days: 2
+    - max: 1499
+      days: 3
+    - max: 2249
+      days: 4
+  default_transit_days: 5
+  severe_weather_threshold: 7
+  severe_weather_extra_days: 1
+  holiday_extra_days: 1
+  carrier_adjustments:
+    CARRIER_A: -1
+    CARRIER_B: 0
+    CARRIER_C: 0
+    CARRIER_D: 1
+    CARRIER_E: 1
+  min_estimate_days: 1
