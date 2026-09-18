@@ -47,3 +47,8 @@ rule_engine:
     CARRIER_D: 1
     CARRIER_E: 1
   min_estimate_days: 1
+  inference:
+  primary_source: ML
+  model_name: delivery_regressor
+  model_version: "1.0.0"
+  require_model: true
