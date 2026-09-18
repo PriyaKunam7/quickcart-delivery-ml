@@ -43,3 +43,11 @@ def get_rule_engine_config(env: str | None = None) -> dict:
     if "rule_engine" not in config:
         raise KeyError(f"'rule_engine' section missing from config")
     return config["rule_engine"]
+
+
+def get_inference_config(env: str | None = None) -> dict:
+    """Convenience accessor for just the inference section."""
+    config = load_config(env)
+    if "inference" not in config:
+        raise KeyError("'inference' section missing from config")
+    return config["inference"]

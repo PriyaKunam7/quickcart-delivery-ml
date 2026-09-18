@@ -12,21 +12,6 @@ model:
 
 rule_engine:
   enabled: true
-  default_estimate_days: 3
-
-shadow:
-  enabled: false
-
-metrics:
-  enabled: true
-  port: 9090
-
-cloud:
-  region: us-west-2
-  provider: aws
-
-rule_engine:
-  enabled: true
   distance_bands:
     - max: 249
       days: 1
@@ -47,3 +32,20 @@ rule_engine:
     CARRIER_D: 1
     CARRIER_E: 1
   min_estimate_days: 1
+
+inference:
+  primary_source: ML
+  model_name: delivery_regressor
+  model_version: "1.0.0"
+  require_model: true
+
+shadow:
+  enabled: false
+
+metrics:
+  enabled: true
+  port: 9090
+
+cloud:
+  region: us-west-2
+  provider: aws
