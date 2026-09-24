@@ -39,8 +39,6 @@ inference:
   model_version: "1.0.0"
   require_model: true
 
-shadow:
-  enabled: false
 
 metrics:
   enabled: true
@@ -49,3 +47,8 @@ metrics:
 cloud:
   region: us-west-2
   provider: aws
+
+shadow:
+  enabled: false
+  percentage: 25
+  sampling_key: order_id

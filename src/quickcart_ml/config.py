@@ -51,3 +51,10 @@ def get_inference_config(env: str | None = None) -> dict:
     if "inference" not in config:
         raise KeyError("'inference' section missing from config")
     return config["inference"]
+
+
+def get_shadow_config(env: str | None = None) -> dict:
+    config = load_config(env)
+    if "shadow" not in config:
+        raise KeyError("'shadow' section missing from config")
+    return config["shadow"]
